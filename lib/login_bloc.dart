@@ -13,12 +13,10 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       LoginButtonPressed event, Emitter<LoginState> emit) async {
     emit(LoginLoading());
 
-    // Simulate login logic (e.g., API call)
-    await Future.delayed(const Duration(seconds: 2)); // Simulated delay
+    await Future.delayed(const Duration(seconds: 2)); 
 
-    // Replace this with your authentication logic
     if (event.email == 'user@example.com' && event.password == 'password123') {
-      emit(LoginInitial()); // Login success (you can define a LoginSuccess state)
+      emit(LoginInitial()); 
     } else {
       emit(LoginFailure(error: 'Invalid email or password'));
     }
